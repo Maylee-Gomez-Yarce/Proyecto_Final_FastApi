@@ -1354,21 +1354,12 @@ El archivo `.gitignore` está configurado para evitar que estos archivos sean ag
 
 ---
 
-## Estado de la instalación
+## Para migraciones nuevas
 
-Después de completar todos los pasos, el proyecto debe quedar aproximadamente así:
+alembic revision --autogenerate -m "descripcion_del_cambio"
 
-```text
-Proyecto_Final/
-├── alembic/
-├── app/
-├── venv/
-├── .env
-├── .gitignore
-├── alembic.ini
-├── citas.db
-├── requirements.txt
-└── README.md
-```
+alembic revision --autogenerate -m "agregar_campo_telefono"
 
-Los archivos `venv/`, `.env` y `citas.db` son locales y están excluidos del control de versiones.
+alembic upgrade head
+
+alembic current
